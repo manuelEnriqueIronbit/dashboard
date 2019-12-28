@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="module">
+        import '../ib-dashboard.js';
+        import '@polymer/paper-toast/paper-toast.js';
+    </script>
+    <title>IbDashboard</title>
+</head>
+<body>
+    <ib-dashboard logo="../assets/logo.png" image-client="../assets/Clientes.png" image-employee="../assets/Empleados.png" image-operation="../assets/Operaciones.png"></ib-dashboard>
+    <paper-toast id="toast"></paper-toast>
+    <script>
+        document.querySelector('ib-dashboard').addEventListener('get-object', event => {
+          const toast = document.querySelector('#toast');
+          toast.text = JSON.stringify(event.detail);
+          toast.open();
+        });
+    </script>
+</body>
+</html>
