@@ -1,3 +1,11 @@
+$color-gradient-exit: linear-gradient(180deg, #00EFD1 0%, #00ACEA 100%);
+$color-gradient-register: linear-gradient(44.3deg, #00BFEF 0%, #00DFD1 100%);
+$color-border-button-register: 1.68px solid #00BFEF;
+$color-border-menu: 0.5px solid #C9C9C9;
+$white-color: #FFFFFF;
+$shadow-cards: 0 21px 62px 0 rgba(0, 0, 0, 0.1);
+$active-option-menu: #ECEAEA;
+
 :host {
   display: inline-block;
   box-sizing: border-box;
@@ -14,10 +22,53 @@
   box-sizing: inherit;
   font-family: inherit;
 }
+
+@media (max-width: 640px) {
+  header{
+    margin: 0 !important;
+    width: 100% !important;
+    
+    
+
+    nav{
+      align-items: center !important;
+      justify-content: space-around !important;
+      ul.main-menu{
+        display: none;
+      }
+    }
+  }
+  main{
+    .dashboard{
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+      .dashboard-operations{
+        padding: 0;
+      }
+      .dashboard-employee, .dashboard-operations{
+        border-bottom: 1px solid black;
+      }
+      .dashboard-employee-card, .dashboard-operations-card, .dashboard-clients-card{
+        margin: 20px 0;
+      }
+      button{
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media (min-width: 640px){
+  paper-menu-button{
+    display: none;
+  }
+}
+
 header{
   margin: auto;
   margin-top: 59px;
-  width: 704px;
+  width: 60vw;
   nav{
     width: 100%;
     display: flex;
@@ -34,22 +85,23 @@ header{
       list-style-type: none;
       padding: 0;
       margin: 0;
-      border-bottom: 0.5px solid #C9C9C9;
+      border-bottom: $color-border-menu ;
       a{
         padding: 12px 17px;
+        cursor: pointer;
         &.active{
-          background-color: #ECEAEA;
+          background-color: $active-option-menu;
           border-radius: 5px;
         }
         &.exit{
-          background-image: linear-gradient(180deg, #00EFD1 0%, #00ACEA 100%);
+          background-image: $color-gradient-exit;
           border-radius: 12px;
           width: 108.36px;
           height: 28.73px;
           display: flex;
           justify-content: center;
           align-items: center;
-          color: #fff;
+          color: $white-color;
           margin-left: 30px;
         }
       }
@@ -73,9 +125,9 @@ header{
     text-align: center;
   }
   .dashboard-employee-card, .dashboard-operations-card, .dashboard-clients-card{
-    background-color: #FFFFFF;
+    background-color: $white-color;
     border-radius: 24.19px;
-    box-shadow: 0 21px 62px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: $shadow-cards;
     width: 152.32px;
     height: 174.16px;
     display: flex;
@@ -83,19 +135,21 @@ header{
     justify-content: center;
     margin-bottom: 38px;
     flex-direction: column;
+    cursor: pointer;
   }
   button{
-    background-image: linear-gradient(44.3deg, #00BFEF 0%, #00DFD1 100%);
-    border: 1.68px solid #00BFEF;
+    background-image: $color-gradient-register;
+    border: $color-border-button-register;
     border-radius: 11.76px;
     width: 102px;
     height: 25.2px;
-    color: #FFFFFF;
+    color: $white-color;
     //font-family: SFUIDisplay;
     font-size: 16.24px;
     font-weight: 700;
     letter-spacing: 0.9px;
     line-height: 19px;
     text-align: center;
+    cursor: pointer;
   }
 }

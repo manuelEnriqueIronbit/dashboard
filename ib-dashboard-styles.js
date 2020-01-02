@@ -15,10 +15,36 @@ export default css`
   box-sizing: inherit;
   font-family: inherit; }
 
+@media (max-width: 640px) {
+  header {
+    margin: 0 !important;
+    width: 100% !important; }
+    header nav {
+      align-items: center !important;
+      justify-content: space-around !important; }
+      header nav ul.main-menu {
+        display: none; }
+  main .dashboard {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px; }
+    main .dashboard .dashboard-operations {
+      padding: 0; }
+    main .dashboard .dashboard-employee, main .dashboard .dashboard-operations {
+      border-bottom: 1px solid black; }
+    main .dashboard .dashboard-employee-card, main .dashboard .dashboard-operations-card, main .dashboard .dashboard-clients-card {
+      margin: 20px 0; }
+    main .dashboard button {
+      margin-bottom: 20px; } }
+
+@media (min-width: 640px) {
+  paper-menu-button {
+    display: none; } }
+
 header {
   margin: auto;
   margin-top: 59px;
-  width: 704px; }
+  width: 60vw; }
   header nav {
     width: 100%;
     display: flex;
@@ -36,7 +62,8 @@ header {
       margin: 0;
       border-bottom: 0.5px solid #C9C9C9; }
       header nav ul a {
-        padding: 12px 17px; }
+        padding: 12px 17px;
+        cursor: pointer; }
         header nav ul a.active {
           background-color: #ECEAEA;
           border-radius: 5px; }
@@ -48,7 +75,7 @@ header {
           display: flex;
           justify-content: center;
           align-items: center;
-          color: #fff;
+          color: #FFFFFF;
           margin-left: 30px; }
 
 .dashboard {
@@ -74,7 +101,8 @@ header {
     align-items: center;
     justify-content: center;
     margin-bottom: 38px;
-    flex-direction: column; }
+    flex-direction: column;
+    cursor: pointer; }
   .dashboard button {
     background-image: linear-gradient(44.3deg, #00BFEF 0%, #00DFD1 100%);
     border: 1.68px solid #00BFEF;
@@ -86,5 +114,6 @@ header {
     font-weight: 700;
     letter-spacing: 0.9px;
     line-height: 19px;
-    text-align: center; }
+    text-align: center;
+    cursor: pointer; }
 `;

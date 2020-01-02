@@ -14,7 +14,7 @@
     <ib-dashboard logo="../assets/logo.png" image-client="../assets/Clientes.png" image-employee="../assets/Empleados.png" image-operation="../assets/Operaciones.png"></ib-dashboard>
     <paper-toast id="toast"></paper-toast>
     <script>
-        document.querySelector('ib-dashboard').addEventListener('get-object', event => {
+        document.querySelector('ib-dashboard').addEventListener('clickedOption', event => {
           const toast = document.querySelector('#toast');
           toast.text = JSON.stringify(event.detail);
           toast.open();
